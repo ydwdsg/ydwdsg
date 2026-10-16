@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "evidence_kind": "historical private-fixture software diagnostics; not independently reproducible material data",
+  "source_sha256": {
+    "gamma24": "0623d7b106cd5faa76e20b389ff09dee40c13d7f2709daf92667a57761df67ab",
+    "fourier": "10115201a566c2d03fd133dd9b519cac7362a40c32517bcd88f143e5d4db9bf2",
+    "contraction": "09c26363ad6836f6c08dee860390140b3c3c5111e34b53239705e57214ca9377",
+    "cold72": "5778fe67f9814027b7bc0c3e2d73aec64e2deac7d060cfee1de28c698e3253d2",
+    "mapping72": "f8aee780084498482b5008fd02404cd20b6460799819635b694c8e6fd575aa65"
+  },
+  "contraction": {
+    "branches": 219,
+    "channels": 10503459,
+    "seconds": {
+      "C_8THREAD": 168.2240192014724,
+      "NUMPY_8THREAD_B32": 0.39603214524686337,
+      "GPU_B32": 0.15326359681785107
+    },
+    "gpu_cold_s": 0.7547962786629796,
+    "gpu_observed_peak_bytes": 731906048,
+    "reference_scaled_error": 2.791323691715392e-15,
+    "conditions": "warm, one triplet, native C 8 threads vs NumPy 8 vs CuPy block32; RTX 5080; host nonexclusive; C one sample, NumPy/CuPy warm medians; ratio includes algorithmic reorganization"
+  },
+  "fourier": {
+    "native_sample_s": [
+      1.2465032674372196,
+      1.213465522043407,
+      1.1680785920470953
+    ],
+    "warm_cupy_sample_s": [
+      0.055855270475149155,
+      0.0574233578518033,
+      0.05401957780122757
+    ],
+    "first_cupy_call_s": 1.766070894896984,
+    "prepare_s": 2.0166546730324626,
+    "observed_gpu_peak_bytes": 2980052992,
+    "conditions": "three sampled triplets; steady-state ratio excludes preparation and first call; includes result layout and download"
+  },
+  "pipeline": {
+    "old_gpu_worker_s": 2540.513,
+    "new_gpu_segmented_q_sum_s": 554.897,
+    "new_gpu_fresh_process_s": 593.2487780088559,
+    "conditions": "historical observations, not a matched isolated end-to-end speedup test; segmented sum covers 16 reused + 8 resumed q points, excludes between-segment process/preparation costs; fresh process includes setup/WTE, other host/GPU workloads present"
+  },
+  "gamma24": {
+    "status": "PASS",
+    "q_count": 24,
+    "branches": 219,
+    "max_abs_THz": 1.9610777845374683e-14,
+    "max_error_over_peak": 7.568557761393295e-14,
+    "max_significant_relative": 6.343701182344208e-10,
+    "rtol": 1e-08,
+    "atol_rule": "per-q 1e-12 times reference peak; near-zero errors retained",
+    "reference": "complete streamed NumPy with original CPU Fourier; NOT an independent all-q native-C reference"
+  },
+  "kappa_errors": {
+    "mode_kappa_P_RTA": {
+      "PASS": true,
+      "rtol": 1e-07,
+      "atol": 1e-12,
+      "max_abs": 1.2811915417465514e-10,
+      "max_tolerance_ratio": 0.0063433885286540755
+    },
+    "mode_kappa_C": {
+      "PASS": true,
+      "rtol": 1e-07,
+      "atol": 1e-12,
+      "max_abs": 4.260480856999038e-15,
+      "max_tolerance_ratio": 8.81113287017238e-06
+    },
+    "kappa_P_RTA": {
+      "PASS": true,
+      "rtol": 1e-07,
+      "atol": 1e-12,
+      "max_abs": 7.147754610414836e-13,
+      "max_tolerance_ratio": 8.175065171088088e-05
+    },
+    "kappa_C": {
+      "PASS": true,
+      "rtol": 1e-07,
+      "atol": 1e-12,
+      "max_abs": 6.114900252818245e-17,
+      "max_tolerance_ratio": 1.5658461746851614e-07
+    },
+    "kappa_TOT_RTA": {
+      "PASS": true,
+      "rtol": 1e-07,
+      "atol": 1e-12,
+      "max_abs": 7.14817094404907e-13,
+      "max_tolerance_ratio": 4.7009536965522275e-05
+    }
+  },
+  "representation72": {
+    "status": "PASS_OWNER_ACCEPTED",
+    "original_strict_gate": "FAIL",
+    "branches": 216,
+    "physical_mesh_pair": "8-atom M42 <-> 72-atom M14",
+    "relative_errors": {
+      "kappaP": 0.001188262880939178,
+      "kappaC": 0.0034932455997487453,
+      "kappaTotal": 0.0008329784368062568
+    },
+    "rtol": 1e-07,
+    "atol": 1e-12,
+    "harmonic_folding": "PASS (private fixture)",
+    "reciprocal_tensor_folding": "PASS (private fixture)",
+    "acceptance": "Project owner explicitly accepted the measured end-to-end differences; maximum relative difference 0.349325 percent. Original rtol/atol result retained, not recomputed or rewritten",
+    "scope": "Completed 72-atom M14 end-to-end representation comparison; no M21 result included"
+  },
+  "independent_native_c_all_q": "PENDING; incomplete reference, not a numerical FAIL",
+  "privacy": "No absolute material kappa, structure, potential, FC2/FC3, eigenstate or linewidth arrays included"
+}

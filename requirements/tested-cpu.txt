@@ -1,0 +1,12 @@
+# Isolated local Windows / Python 3.12 test environment; not a production upgrade.
+numpy==2.5.4
+phono3py==3.31.1
+phonopy==3.5.1
+scipy==1.18.1
+spglib==2.8.0
+symfc==1.7.3
+h5py==3.16.0
+PyYAML==6.0.3
+matplotlib==3.11.2
+pytest==9.1.1
+build==1.6.1

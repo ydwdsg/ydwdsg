@@ -1,0 +1,10 @@
+phono3py-cupy-accelerator 0.1.0
+
+Project author: yangdewei <1147398767@qq.com>
+Copyright (c) 2026, yangdewei (original code and adaptations).
+
+Independent experimental project; not an official Phono3py or CuPy release.
+The Fourier and contraction implementations follow algorithms and conventions
+in Phono3py v3.31.1. Upstream copyright: Phonopy and Atsushi Togo.
+See licenses/PHONO3PY-BSD-3-Clause.txt and THIRD_PARTY_NOTICES.md.
+No endorsement by upstream authors is implied.
